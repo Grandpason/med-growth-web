@@ -60,7 +60,7 @@ const CookieConsent = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-white mb-1">Çerez Tercihleriniz</h4>
-                    <p className="text-[11px] text-gray-400 font-light leading-relaxed max-w-xl">
+                    <p className="text-[11px] text-gray-300 font-light leading-relaxed max-w-xl">
                       Deneyiminizi iyileştirmek ve trafiği analiz etmek için çerezler kullanıyoruz. 
                       <strong> KVKK/GDPR</strong> kapsamında verileriniz güvendedir.
                     </p>
@@ -82,7 +82,7 @@ const CookieConsent = () => {
                   </button>
                   <button 
                     onClick={handleAcceptAll}
-                    className="flex-1 md:flex-none px-6 py-2 rounded-full text-xs font-bold bg-brand-accent hover:bg-blue-600 text-white shadow-lg transition-all"
+                    className="flex-1 md:flex-none px-6 py-2 rounded-full text-xs font-bold bg-[#2563eb] hover:bg-blue-700 text-white shadow-lg transition-all"
                   >
                     Hepsini Kabul Et
                   </button>
@@ -105,7 +105,7 @@ const CookieConsent = () => {
                       <span className="text-xs font-bold text-white">Zorunlu</span>
                       <Check size={14} className="text-brand-accent" />
                     </div>
-                    <p className="text-[10px] text-gray-500 leading-relaxed">Temel fonksiyonlar için gereklidir.</p>
+                    <p className="text-[10px] text-gray-400 leading-relaxed">Temel fonksiyonlar için gereklidir.</p>
                   </div>
                   
                   <div 
@@ -118,7 +118,7 @@ const CookieConsent = () => {
                         <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${preferences.analytics ? 'right-0.5' : 'left-0.5'}`}></div>
                       </div>
                     </div>
-                    <p className="text-[10px] text-gray-500 leading-relaxed">Kullanım verilerini analiz eder.</p>
+                    <p className="text-[10px] text-gray-400 leading-relaxed">Kullanım verilerini analiz eder.</p>
                   </div>
                   
                   <div 
@@ -131,12 +131,12 @@ const CookieConsent = () => {
                         <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${preferences.marketing ? 'right-0.5' : 'left-0.5'}`}></div>
                       </div>
                     </div>
-                    <p className="text-[10px] text-gray-500 leading-relaxed">Size özel teklifler sunar.</p>
+                    <p className="text-[10px] text-gray-400 leading-relaxed">Size özel teklifler sunar.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center justify-between pt-3 border-t border-white/5">
-                  <p className="text-[9px] text-gray-500 max-w-md uppercase tracking-wider font-semibold">
+                  <p className="text-[9px] text-gray-400 max-w-md uppercase tracking-wider font-semibold">
                     MED GROWTH PARTNERS • <a href="#" className="text-brand-accent hover:underline">KVKK AYDINLATMA METNİ</a>
                   </p>
                   <button 

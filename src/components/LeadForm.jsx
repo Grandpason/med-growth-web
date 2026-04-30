@@ -109,9 +109,10 @@ const LeadForm = ({ isModal = false }) => {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid md:grid-cols-2 gap-5">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-gray-400 flex items-center ml-1"><User size={12} className="mr-2" /> İsim Soyisim</label>
+                <label htmlFor="fullName" className="text-xs font-medium text-gray-300 flex items-center ml-1"><User size={12} className="mr-2" /> İsim Soyisim</label>
                 <input 
                   required
+                  id="fullName"
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleInputChange}
@@ -121,9 +122,10 @@ const LeadForm = ({ isModal = false }) => {
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-gray-400 flex items-center ml-1"><Building2 size={12} className="mr-2" /> Şirket Adı / Web Sitesi</label>
+                <label htmlFor="company" className="text-xs font-medium text-gray-300 flex items-center ml-1"><Building2 size={12} className="mr-2" /> Şirket Adı / Web Sitesi</label>
                 <input 
                   required
+                  id="company"
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
@@ -136,9 +138,10 @@ const LeadForm = ({ isModal = false }) => {
 
             <div className="grid md:grid-cols-2 gap-5">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-gray-400 flex items-center ml-1"><Mail size={12} className="mr-2" /> E-posta Adresi</label>
+                <label htmlFor="email" className="text-xs font-medium text-gray-300 flex items-center ml-1"><Mail size={12} className="mr-2" /> E-posta Adresi</label>
                 <input 
                   required
+                  id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
@@ -148,9 +151,10 @@ const LeadForm = ({ isModal = false }) => {
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-gray-400 flex items-center ml-1"><Phone size={12} className="mr-2" /> Telefon Numarası</label>
+                <label htmlFor="phone" className="text-xs font-medium text-gray-300 flex items-center ml-1"><Phone size={12} className="mr-2" /> Telefon Numarası</label>
                 <input 
                   required
+                  id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
@@ -165,6 +169,8 @@ const LeadForm = ({ isModal = false }) => {
               <label className="text-xs font-medium text-gray-400 flex items-center ml-1"><BarChart size={12} className="mr-2" /> Büyüme Hedefiniz Nedir?</label>
               <select 
                 name="goal"
+                id="goal"
+                aria-label="Büyüme hedefinizi seçin"
                 value={formData.goal}
                 onChange={handleInputChange}
                 className="w-full bg-surface-dark border border-border-dark rounded-xl px-4 py-3 text-white focus:border-brand-accent focus:ring-1 focus:ring-brand-accent focus:shadow-[0_0_15px_rgba(59,130,246,0.3)] outline-none transition-all appearance-none cursor-pointer"
@@ -195,7 +201,7 @@ const LeadForm = ({ isModal = false }) => {
               )}
             </MagneticButton>
             
-            <p className="text-center text-[10px] text-gray-500 uppercase tracking-tighter">
+            <p className="text-center text-[10px] text-gray-400 uppercase tracking-tighter">
               Verileriniz 256-bit SSL ile korunmaktadır.
             </p>
           </form>

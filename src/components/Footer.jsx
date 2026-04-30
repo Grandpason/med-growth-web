@@ -23,6 +23,7 @@ const Footer = ({ onNavigate }) => {
                 href="https://www.instagram.com/medgrowth.official/" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="Instagram profilimizi ziyaret edin"
                 className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-accent hover:text-white transition-all duration-300 border border-white/10"
               >
                 <Instagram size={20} />
@@ -31,12 +32,14 @@ const Footer = ({ onNavigate }) => {
                 href="https://www.linkedin.com/in/emin-dedeo%C4%9Flu-2a50b2183/" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="LinkedIn profilimizi ziyaret edin"
                 className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-accent hover:text-white transition-all duration-300 border border-white/10"
               >
                 <Linkedin size={20} />
               </a>
               <a 
                 href="mailto:medgrowthofficial@gmail.com"
+                aria-label="Bize e-posta gönderin"
                 className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-accent hover:text-white transition-all duration-300 border border-white/10"
               >
                 <Mail size={20} />
@@ -46,7 +49,7 @@ const Footer = ({ onNavigate }) => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Hızlı Bağlantılar</h4>
+            <h3 className="text-white font-semibold mb-6">Hızlı Bağlantılar</h3>
             <ul className="space-y-4">
               <li>
                 <button 
@@ -88,7 +91,7 @@ const Footer = ({ onNavigate }) => {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Uzmanlık Alanlarımız</h4>
+            <h3 className="text-white font-semibold mb-6">Uzmanlık Alanlarımız</h3>
             <ul className="space-y-4">
               <li><a href="#" className="text-gray-400 hover:text-brand-accent transition-colors">Performans Pazarlaması</a></li>
               <li><a href="#" className="text-gray-400 hover:text-brand-accent transition-colors">SEO & GEO Stratejileri</a></li>
@@ -99,7 +102,7 @@ const Footer = ({ onNavigate }) => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-6">İletişim</h4>
+            <h3 className="text-white font-semibold mb-6">İletişim</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-brand-accent flex-shrink-0 mt-1" />
@@ -128,10 +131,10 @@ const Footer = ({ onNavigate }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} MED Growth Partners. Tüm hakları saklıdır.
           </p>
-          <div className="flex space-x-6 text-sm text-gray-500">
+          <div className="flex space-x-6 text-sm text-gray-400">
             <a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a>
             <a href="#" className="hover:text-white transition-colors">Kullanım Şartları</a>
           </div>

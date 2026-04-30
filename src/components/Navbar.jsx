@@ -81,6 +81,7 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
             <button 
               onClick={() => setIsOpen(!isOpen)} 
               className="text-gray-300 hover:text-white focus:outline-none p-2"
+              aria-label={isOpen ? "Menüyü kapat" : "Menüyü aç"}
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
