@@ -128,6 +128,13 @@ const postData = {
     result: "10x Organik Görünürlük",
     content: (
       <section>
+        <div className="aspect-[21/9] overflow-hidden rounded-[2.5rem] mb-12 border border-white/10 glass">
+          <img 
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" 
+            alt="Modern Construction Architecture"
+            className="w-full h-full object-cover opacity-80"
+          />
+        </div>
         <h2 className="text-2xl font-bold text-white mb-4">Dijitalde Temel Atmak</h2>
         <p className="text-gray-400 font-light leading-relaxed text-lg">
           İnşaat sektörü gibi geleneksel bir alanda, lokal SEO ve Google Haritalar optimizasyonu ile NESA İnşaat'ın yeni projelerine gelen talepleri otomatize ettik.
@@ -142,6 +149,13 @@ const postData = {
     result: "%95 Randevu Doluluğu",
     content: (
       <section>
+        <div className="aspect-[21/9] overflow-hidden rounded-[2.5rem] mb-12 border border-white/10 glass">
+          <img 
+            src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&q=80&w=1200" 
+            alt="Professional Tattoo Studio"
+            className="w-full h-full object-cover opacity-80"
+          />
+        </div>
         <h2 className="text-2xl font-bold text-white mb-4">Sanatı Veriyle Birleştirmek</h2>
         <p className="text-gray-400 font-light leading-relaxed text-lg">
           Kreatif içerikleri, doğru hedef kitle kurgusuyla birleştirerek dövme stüdyosu için sürdürülebilir bir randevu akışı oluşturduk.
