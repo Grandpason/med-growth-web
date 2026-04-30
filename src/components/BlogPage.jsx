@@ -4,9 +4,9 @@ import { ArrowLeft, Calendar, User, Clock, ChevronRight } from 'lucide-react';
 
 const blogPosts = [
   {
-    id: 'spa-ciro-olceklendirme',
-    title: "SPA Merkezi Ciro Ölçeklendirme: 250k'dan 600k'ya Yolculuk",
-    excerpt: "Zarar eden bir işletmeyi 30 günde nasıl kâra geçirdik? Veri odaklı stratejimizin tüm detayları.",
+    id: 'la-villa-spa-ciro',
+    title: "La Villa Spa & Masaj: 250k'dan 600k'ya Ölçeklendirme",
+    excerpt: "Veri odaklı stratejiler ve otomasyon kurgusuyla 30 günde elde edilen %140 gelir artışının teknik detayları.",
     date: "15 Nisan 2024",
     author: "MED Growth Team",
     readTime: "8 dk",
@@ -14,14 +14,34 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800"
   },
   {
-    id: 'b2b-leads-stratejisi',
-    title: "B2B Lead Üretiminde n8n Otomasyonlarının Gücü",
-    excerpt: "Manuel süreçleri nasıl %90 oranında azalttık ve lead kalitesini nasıl artırdık?",
-    date: "10 Nisan 2024",
+    id: 'nesa-insaat-seo',
+    title: "NESA İnşaat: SEO ve Lokal Görünürlük Başarısı",
+    excerpt: "Geleneksel bir inşaat firmasının dijitaldeki görünürlüğünü nasıl 10 katına çıkardık?",
+    date: "20 Nisan 2024",
     author: "MED Growth Team",
     readTime: "6 dk",
+    category: "Vaka Analizi",
+    image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 'gorkem-tattoo-reklam',
+    title: "Görkem Tattoo: Kreatif Reklam Stratejisi",
+    excerpt: "Sanat ve performansı birleştiren reklam kurgularıyla randevu doluluk oranlarını %95'e ulaştırdık.",
+    date: "25 Nisan 2024",
+    author: "MED Growth Team",
+    readTime: "5 dk",
+    category: "Vaka Analizi",
+    image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 'n8n-b2b-email-otomasyonu',
+    title: "B2B Pazarlamada n8n ile E-posta Otomasyonu: Pipeline Kurulumu",
+    excerpt: "B2B şirketleri için n8n tabanlı e-posta pazarlama otomasyonu ile verimlilik artışı.",
+    date: "30 Nisan 2024",
+    author: "MED Growth Team",
+    readTime: "10 dk",
     category: "Teknoloji",
-    image: "https://images.unsplash.com/photo-1518433278983-5140531f1a6b?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
   }
 ];
 

@@ -122,7 +122,11 @@ function App() {
             ) : currentPage === 'blog' ? (
               <BlogPage key="blog" onNavigate={handleNavigate} onSelectPost={handleSelectPost} />
             ) : (
-              <BlogPost key="blog-detail" onBack={() => setCurrentPage('blog')} />
+              <BlogPost 
+                key="blog-detail" 
+                postId={currentPostId} 
+                onBack={() => setCurrentPage('blog')} 
+              />
             )}
           </AnimatePresence>
         </Suspense>
