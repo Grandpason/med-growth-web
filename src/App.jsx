@@ -132,7 +132,7 @@ function App() {
         </Suspense>
       </main>
 
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
 
       <Suspense fallback={null}>
         <Modal isOpen={isModalOpen} onClose={closeModal}>

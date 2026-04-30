@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
-const Footer = () => {
+const Footer = ({ onNavigate }) => {
   return (
     <footer id="contact" className="bg-brand-dark pt-20 pb-10 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,10 +40,41 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-6">Hızlı Bağlantılar</h4>
             <ul className="space-y-4">
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Hizmetlerimiz</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">Neden Biz?</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Başarı Hikayeleri</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog & İçgörüler</a></li>
+              <li>
+                <button 
+                  onClick={() => {
+                    onNavigate('home');
+                    setTimeout(() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                  }}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Hizmetlerimiz
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('about')}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Neden Biz?
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('case-studies')}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Başarı Hikayeleri
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('blog')}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Blog & İçgörüler
+                </button>
+              </li>
             </ul>
           </div>
 
