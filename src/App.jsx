@@ -16,6 +16,7 @@ const AboutPage = lazy(() => import('./components/AboutPage'));
 const TechStack = lazy(() => import('./components/TechStack'));
 const BlogPage = lazy(() => import('./components/BlogPage'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
+import CookieConsent from './components/CookieConsent';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
@@ -134,6 +135,8 @@ function App() {
           <LeadForm isModal={true} />
         </Modal>
       </Suspense>
+
+      <CookieConsent />
     </div>
   );
 }
