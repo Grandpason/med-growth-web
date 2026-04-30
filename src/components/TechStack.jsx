@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart, Chrome, Brain, Eye } from 'lucide-react';
+import { BarChart, Chrome, Sparkles, Eye } from 'lucide-react';
 
 const TechStack = () => {
   const categories = [
@@ -18,7 +18,7 @@ const TechStack = () => {
     },
     {
       title: "Yapay Zeka Seti",
-      icon: <Brain size={24} />,
+      icon: <Sparkles size={24} />,
       color: "emerald",
       tools: ["Gemini", "NotebookLLM", "Claude"]
     },
