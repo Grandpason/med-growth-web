@@ -56,7 +56,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group p-8 rounded-3xl glass hover:bg-surface-dark transition-all duration-300"
+              className="group p-6 sm:p-8 rounded-3xl glass hover:bg-surface-dark transition-all duration-300"
             >
               <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 \${service.color} group-hover:scale-110 transition-transform duration-300`}>
                 {service.icon}

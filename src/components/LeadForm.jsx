@@ -104,7 +104,7 @@ const LeadForm = ({ isModal = false }) => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className={`${isModal ? '' : 'glass p-8 md:p-10 rounded-[2.5rem] border-white/5 relative'}`}
+          className={`${isModal ? '' : 'glass p-6 sm:p-8 md:p-10 rounded-[2.5rem] border-white/5 relative'}`}
         >
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid md:grid-cols-2 gap-5">

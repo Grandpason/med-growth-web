@@ -16,6 +16,20 @@
 }
 
 @layer base {
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  h1 { @apply text-[clamp(2.5rem,8vw,4rem)]; }
+  h2 { @apply text-[clamp(2rem,6vw,3rem)]; }
+  h3 { @apply text-[clamp(1.5rem,4vw,2rem)]; }
+  p { @apply text-[clamp(1rem,2vw,1.125rem)]; }
   html {
     scroll-behavior: smooth;
     /* Lenis smooth scroll fix */

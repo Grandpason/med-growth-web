@@ -17,7 +17,7 @@ const BentoCard = ({ className, children, title, subtitle, icon, delay = 0 }) =>
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.5, delay }}
     className={cn(
-      "glass rounded-3xl p-8 relative overflow-hidden group",
+      "glass rounded-3xl p-6 sm:p-8 relative group",
       className
     )}
   >
@@ -86,33 +86,36 @@ const CaseStudy = ({ onNavigate }) => {
             subtitle="The Impact"
             icon={<ArrowUpRight size={28} />}
           >
-            <div className="grid grid-cols-2 gap-8 h-full items-center mt-4">
-              <div>
-                <p className="text-gray-400 mb-2">Kasım Ciro</p>
-                <p className="text-3xl font-light text-gray-500 line-through decoration-red-500/50">252.300 ₺</p>
-                <div className="mt-8">
-                  <p className="text-gray-400 mb-2">Aralık Ciro</p>
-                  <div className="text-5xl font-bold text-white flex items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 h-full items-stretch lg:items-center mt-6">
+              <div className="space-y-8">
+                <div>
+                  <p className="text-gray-400 text-sm mb-2 uppercase tracking-tight">Kasım Ciro</p>
+                  <p className="text-2xl sm:text-3xl font-light text-gray-500 line-through decoration-red-500/50">252.300 ₺</p>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-2 uppercase tracking-tight">Aralık Ciro</p>
+                  <div className="text-[clamp(1.75rem,8vw,3.5rem)] font-bold text-white flex items-center break-words leading-none">
                     462.600 ₺
                   </div>
                 </div>
               </div>
-              <div className="h-full flex flex-col justify-center">
-                <div className="bg-surface-darker rounded-2xl p-6 border border-brand-accent/20">
-                  <p className="text-sm text-brand-accent uppercase tracking-widest mb-2">Net Kâr Artışı</p>
-                  <div className="text-4xl font-bold text-white flex items-baseline">
+              
+              <div className="flex flex-col justify-center space-y-6">
+                <div className="bg-surface-darker rounded-2xl p-6 border border-brand-accent/20 relative z-10 shadow-xl">
+                  <p className="text-xs text-brand-accent uppercase tracking-widest mb-3 font-bold">Net Kâr Artışı</p>
+                  <div className="text-[clamp(1.5rem,6vw,2.5rem)] font-bold text-white flex items-baseline leading-none mb-2">
                     +83.300 ₺
                   </div>
-                  <p className="text-xs text-gray-500 mt-2">11.000 ₺ zarardan sadece 15 günde geçiş.</p>
+                  <p className="text-xs text-gray-500 leading-relaxed font-medium">11.000 ₺ zarardan sadece 15 günde kâra geçiş.</p>
                 </div>
                 
-                <div className="mt-6 flex items-center space-x-4">
-                  <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center border border-green-500/20">
+                <div className="flex items-center space-x-5 bg-white/5 p-4 rounded-2xl border border-white/5">
+                  <div className="w-14 h-14 shrink-0 rounded-full bg-green-500/10 flex items-center justify-center border border-green-500/20">
                     <span className="text-green-500 font-bold text-xl">6.5x</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-white">ROAS</p>
-                    <p className="text-sm text-gray-400">Harcanan 1₺ = 6.5₺ Getiri</p>
+                    <p className="font-bold text-white text-lg">ROAS</p>
+                    <p className="text-xs text-gray-400 font-medium">Harcanan 1₺ = 6.5₺ Getiri</p>
                   </div>
                 </div>
               </div>
