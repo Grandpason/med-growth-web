@@ -130,10 +130,13 @@ const postData = {
       <section>
         <div className="aspect-[21/9] overflow-hidden rounded-[2.5rem] mb-12 border border-white/10 glass">
           <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200" 
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=webp&fit=crop&q=80&w=1200" 
             alt="Modern Construction Site"
+            width="1200"
+            height="514"
+            fetchpriority="high"
             onError={(e) => {
-              e.target.src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200';
+              e.target.src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?fm=webp&fit=crop&q=80&w=1200';
             }}
             className="w-full h-full object-cover opacity-80"
           />
@@ -154,8 +157,11 @@ const postData = {
       <section>
         <div className="aspect-[21/9] overflow-hidden rounded-[2.5rem] mb-12 border border-white/10 glass">
           <img 
-            src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&q=80&w=1200" 
+            src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?fm=webp&fit=crop&q=80&w=1200" 
             alt="Professional Tattoo Studio"
+            width="1200"
+            height="514"
+            fetchpriority="high"
             className="w-full h-full object-cover opacity-80"
           />
         </div>

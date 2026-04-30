@@ -11,7 +11,7 @@ const blogPosts = [
     author: "MED Growth Team",
     readTime: "8 dk",
     category: "Vaka Analizi",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?fm=webp&fit=crop&q=80&w=800"
   },
   {
     id: 'nesa-insaat-seo',
@@ -21,7 +21,7 @@ const blogPosts = [
     author: "MED Growth Team",
     readTime: "6 dk",
     category: "Vaka Analizi",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=webp&fit=crop&q=80&w=800"
   },
   {
     id: 'gorkem-tattoo-reklam',
@@ -31,7 +31,7 @@ const blogPosts = [
     author: "MED Growth Team",
     readTime: "5 dk",
     category: "Vaka Analizi",
-    image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?fm=webp&fit=crop&q=80&w=800"
   },
   {
     id: 'n8n-b2b-email-otomasyonu',
@@ -41,7 +41,7 @@ const blogPosts = [
     author: "MED Growth Team",
     readTime: "10 dk",
     category: "Teknoloji",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?fm=webp&fit=crop&q=80&w=800"
   }
 ];
 
@@ -86,8 +86,10 @@ const BlogPage = ({ onNavigate, onSelectPost }) => {
                   src={post.image} 
                   alt={post.title}
                   loading="lazy"
+                  width="800"
+                  height="450"
                   onError={(e) => {
-                    e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800';
+                    e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?fm=webp&fit=crop&q=80&w=800';
                   }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-80"
                 />
