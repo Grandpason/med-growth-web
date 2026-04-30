@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Music, Cpu, Award } from 'lucide-react';
+import { ArrowLeft, GraduationCap, Music, Cpu } from 'lucide-react';
 
-const WhyUs = () => {
+const AboutPage = ({ onNavigate }) => {
   const pillars = [
     {
       icon: <GraduationCap size={32} className="text-blue-400" />,
@@ -25,12 +25,27 @@ const WhyUs = () => {
   ];
 
   return (
-    <section id="why-us" className="py-24 relative">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen pt-32 pb-20"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-brand-accent font-semibold tracking-widest uppercase text-sm mb-3">Neden Biz?</h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">Strateji, Yaratıcılık ve Verinin Kesişimi</h3>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+        <button 
+          onClick={() => onNavigate('home')}
+          className="flex items-center text-gray-400 hover:text-white transition-colors mb-12 group"
+        >
+          <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-2 transition-transform" />
+          Ana Sayfaya Dön
+        </button>
+
+        <div className="text-center mb-20">
+          <h2 className="text-brand-accent font-semibold tracking-widest uppercase text-sm mb-4">Neden Biz?</h2>
+          <h1 className="text-4xl md:text-7xl font-bold text-white mb-8 leading-tight">
+            Strateji, Yaratıcılık ve <br /> Verinin Kesişimi
+          </h1>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
             Sadece reklam yönetmiyoruz; akademik disiplin ve kreatif vizyonu teknik verilerle birleştirerek markanızın hikayesini büyüme odaklı bir senfoniye dönüştürüyoruz.
           </p>
         </div>
@@ -43,22 +58,22 @@ const WhyUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass p-8 rounded-[2rem] border-white/5 hover:border-brand-accent/30 transition-all duration-500 group"
+              className="glass p-10 rounded-[3rem] border-white/5 hover:border-brand-accent/30 transition-all duration-500 group"
             >
-              <div className="mb-6 w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+              <div className="mb-8 w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                 {pillar.icon}
               </div>
-              <h4 className="text-2xl font-bold text-white mb-4">{pillar.title}</h4>
-              <p className="text-gray-400 leading-relaxed mb-6 font-light">{pillar.description}</p>
-              <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-brand-accent uppercase tracking-widest">
+              <h3 className="text-3xl font-bold text-white mb-6">{pillar.title}</h3>
+              <p className="text-gray-300 leading-relaxed mb-8 font-light text-lg">{pillar.description}</p>
+              <div className="inline-block px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-brand-accent uppercase tracking-widest">
                 {pillar.highlight}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.div>
   );
 };
 
-export default WhyUs;
+export default AboutPage;

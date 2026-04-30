@@ -25,12 +25,7 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => {
-                onNavigate('home');
-                setTimeout(() => {
-                  document.getElementById('why-us')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-              }}
+              onClick={() => onNavigate('about')}
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               Neden Biz?
@@ -99,11 +94,8 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
             <button 
               onClick={() => {
-                onNavigate('home');
+                onNavigate('about');
                 setIsOpen(false);
-                setTimeout(() => {
-                  document.getElementById('why-us')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
               }}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >

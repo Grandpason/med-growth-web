@@ -12,7 +12,7 @@ const NeuralNetwork = lazy(() => import('./components/NeuralNetwork'));
 const LeadForm = lazy(() => import('./components/LeadForm'));
 const Modal = lazy(() => import('./components/Modal'));
 const CaseStudiesPage = lazy(() => import('./components/CaseStudiesPage'));
-const WhyUs = lazy(() => import('./components/WhyUs'));
+const AboutPage = lazy(() => import('./components/AboutPage'));
 const TechStack = lazy(() => import('./components/TechStack'));
 const BlogPage = lazy(() => import('./components/BlogPage'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
@@ -107,7 +107,6 @@ function App() {
                 transition={{ duration: 0.5 }}
               >
                 <Hero onOpenModal={openModal} />
-                <WhyUs />
                 <Services onOpenModal={openModal} />
                 <TechStack />
                 <CaseStudy onNavigate={handleNavigate} />
@@ -117,6 +116,8 @@ function App() {
               </motion.div>
             ) : currentPage === 'case-studies' ? (
               <CaseStudiesPage key="case-studies" onNavigate={handleNavigate} />
+            ) : currentPage === 'about' ? (
+              <AboutPage key="about" onNavigate={handleNavigate} />
             ) : currentPage === 'blog' ? (
               <BlogPage key="blog" onNavigate={handleNavigate} onSelectPost={handleSelectPost} />
             ) : (
