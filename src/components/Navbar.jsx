@@ -61,7 +61,7 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
               onClick={() => {
                 onNavigate('home');
                 setTimeout(() => {
-                  document.getElementById('analysis')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
               }}
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
@@ -137,7 +137,7 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
                 onNavigate('home');
                 setIsOpen(false);
                 setTimeout(() => {
-                  document.getElementById('analysis')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
               }}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
