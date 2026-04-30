@@ -7,42 +7,26 @@ const projects = [
   {
     title: "La Villa Spa & Masaj",
     category: "Güzellik & Sağlık",
-    metric: "%85 Gelir Artışı",
-    description: "Zarar eden bir işletmeyi 15 günde kâra geçiren bütüncül büyüme stratejisi.",
+    metric: "%140 Gelir Artışı",
+    description: "Zarar eden bir işletmeyi 30 günde kâra geçiren ve ciro rekoru kıran bütüncül büyüme stratejisi.",
     color: "from-blue-500/20 to-purple-500/20",
     size: "md:col-span-2 md:row-span-2"
   },
   {
-    title: "E-Ticaret Moda Devrimi",
-    category: "Moda & Perakende",
-    metric: "8.2x ROAS",
-    description: "Düşük performanslı Meta reklamlarını veri odaklı kreatiflerle optimize ettik.",
+    title: "NESA İnşaat",
+    category: "İnşaat & Gayrimenkul",
+    metric: "10x Görünürlük",
+    description: "Lokal SEO ve dijital itibar yönetimi ile yeni projeler için sürdürülebilir talep akışı.",
     color: "from-orange-500/20 to-red-500/20",
     size: "md:col-span-1 md:row-span-1"
   },
   {
-    title: "SaaS Platform Ölçekleme",
-    category: "Teknoloji / Yazılım",
-    metric: "+%120 Lead Artışı",
-    description: "Karmaşık B2B süreçlerini basitleştirerek dönüşüm hunisini revize ettik.",
+    title: "Görkem Tattoo",
+    category: "Sanat & Hizmet",
+    metric: "%95 Doluluk",
+    description: "Kreatif içerik ve keskin nişancı reklam kurgusuyla randevu trafiği optimizasyonu.",
     color: "from-green-500/20 to-emerald-500/20",
     size: "md:col-span-1 md:row-span-1"
-  },
-  {
-    title: "Global Lojistik Çözümleri",
-    category: "Lojistik & B2B",
-    metric: "30% Maliyet Tasarrufu",
-    description: "Operasyonel verimliliği SEO ve GEO stratejileriyle dijital görünürlüğe taşıdık.",
-    color: "from-cyan-500/20 to-blue-500/20",
-    size: "md:col-span-1 md:row-span-2"
-  },
-  {
-    title: "Yapay Zeka Destekli Eğitim",
-    category: "Eğitim Teknolojileri",
-    metric: "50K+ Yeni Kayıt",
-    description: "AEO (Answer Engine Optimization) ile AI aramalarında ilk sıraya yerleştik.",
-    color: "from-indigo-500/20 to-purple-500/20",
-    size: "md:col-span-2 md:row-span-1"
   }
 ];
 

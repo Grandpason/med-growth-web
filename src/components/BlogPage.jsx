@@ -79,6 +79,7 @@ const BlogPage = ({ onNavigate, onSelectPost }) => {
               transition={{ delay: index * 0.1 }}
               onClick={() => onSelectPost(post.id)}
               className="glass rounded-[2.5rem] overflow-hidden group cursor-pointer border border-white/5 hover:border-brand-accent/30 transition-all duration-500"
+              style={{ willChange: 'transform' }}
             >
               <div className="aspect-[16/9] overflow-hidden relative">
                 <img 

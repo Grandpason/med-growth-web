@@ -59,6 +59,7 @@ const AboutPage = ({ onNavigate }) => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="glass p-10 rounded-[3rem] border-white/5 hover:border-brand-accent/30 transition-all duration-500 group"
+              style={{ willChange: 'transform' }}
             >
               <div className="mb-8 w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                 {pillar.icon}

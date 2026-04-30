@@ -98,6 +98,7 @@
   border-radius: 50%;
   filter: blur(100px);
   animation: float 20s infinite ease-in-out alternate;
+  will-change: transform;
 }
 
 .mesh-blob-2 {
@@ -110,6 +111,7 @@
   border-radius: 50%;
   filter: blur(120px);
   animation: float-reverse 25s infinite ease-in-out alternate;
+  will-change: transform;
 }
 
 .mesh-blob-3 {
@@ -122,6 +124,7 @@
   border-radius: 50%;
   filter: blur(90px);
   animation: float 30s infinite ease-in-out alternate-reverse;
+  will-change: transform;
 }
 
 .mesh-blob-4 {
@@ -134,6 +137,7 @@
   border-radius: 50%;
   filter: blur(100px);
   animation: float-reverse 22s infinite ease-in-out alternate;
+  will-change: transform;
 }
 
 @keyframes float {
