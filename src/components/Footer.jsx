@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = ({ onNavigate }) => {
   return (
@@ -26,6 +26,14 @@ const Footer = ({ onNavigate }) => {
                 className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-accent hover:text-white transition-all duration-300 border border-white/10"
               >
                 <Instagram size={20} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/emin-dedeo%C4%9Flu-2a50b2183/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-accent hover:text-white transition-all duration-300 border border-white/10"
+              >
+                <Linkedin size={20} />
               </a>
               <a 
                 href="mailto:medgrowthofficial@gmail.com"
@@ -108,6 +116,10 @@ const Footer = ({ onNavigate }) => {
               <li className="flex items-center space-x-3">
                 <Instagram size={20} className="text-brand-accent flex-shrink-0" />
                 <a href="https://www.instagram.com/medgrowth.official/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors cursor-hover-target">@medgrowth.official</a>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Linkedin size={20} className="text-brand-accent flex-shrink-0" />
+                <a href="https://www.linkedin.com/in/emin-dedeo%C4%9Flu-2a50b2183/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors cursor-hover-target">Emin Dedeoğlu</a>
               </li>
             </ul>
           </div>
