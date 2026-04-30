@@ -9,7 +9,7 @@ export default defineConfig({
     react(), 
     tailwindcss(),
     Sitemap({
-      hostname: 'https://medgrowthpartners.com', // ÖNEMLİ: Kendi canlı domain adresiniz ile değiştirin
+      hostname: 'https://med-growth-web.vercel.app', // ÖNEMLİ: Kendi canlı domain adresiniz ile değiştirin
       dynamicRoutes: [
         '/',
         '/case-studies' // Uygulamanızdaki mevcut alt sayfalar

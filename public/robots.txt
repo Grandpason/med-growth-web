@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://medgrowthpartners.com/sitemap.xml
+Sitemap: https://med-growth-web.vercel.app/sitemap.xml
