@@ -11,10 +11,7 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <button 
-            onClick={() => {
-              onNavigate('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onClick={() => onNavigate('home')}
             className="flex-shrink-0 flex items-center cursor-pointer"
           >
             <span className="font-bold text-2xl tracking-tight text-white">
@@ -32,12 +29,7 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button 
-              onClick={() => {
-                onNavigate('home');
-                setTimeout(() => {
-                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-              }}
+              onClick={() => onNavigate('services')}
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               Sistem Mimarisi
@@ -58,12 +50,7 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button 
-              onClick={() => {
-                onNavigate('home');
-                setTimeout(() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-              }}
+              onClick={() => onNavigate('contact')}
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               İletişim
@@ -104,11 +91,8 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
             </button>
             <button 
               onClick={() => {
-                onNavigate('home');
+                onNavigate('services');
                 setIsOpen(false);
-                setTimeout(() => {
-                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
               }}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >
@@ -134,11 +118,8 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
             </button>
             <button 
               onClick={() => {
-                onNavigate('home');
+                onNavigate('contact');
                 setIsOpen(false);
-                setTimeout(() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
               }}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >

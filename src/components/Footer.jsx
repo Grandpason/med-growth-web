@@ -53,10 +53,7 @@ const Footer = ({ onNavigate }) => {
             <ul className="space-y-4">
               <li>
                 <button 
-                  onClick={() => {
-                    onNavigate('home');
-                    setTimeout(() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }), 100);
-                  }}
+                  onClick={() => onNavigate('services')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Hizmetlerimiz

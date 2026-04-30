@@ -19,16 +19,23 @@ const Footer = lazy(() => import('./components/Footer'));
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
-  const [currentPostId, setCurrentPostId] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Scroll to top on page change
-    window.scrollTo(0, 0);
-  }, [currentPage]);
+    // Scroll to top or specific section on route change
+    if (location.pathname === '/iletisim') {
+      setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100);
+    } else if (location.pathname === '/sistem-mimarisi') {
+      setTimeout(() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }), 100);
+    } else if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -57,30 +64,59 @@ function App() {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  const handleNavigate = (page) => {
-    setCurrentPage(page);
-    setCurrentPostId(null);
+
+  const handleNavigate = (path) => {
+    // Check if it's a section on the home page
+    if (path === 'services') {
+      navigate('/sistem-mimarisi');
+    } else if (path === 'contact') {
+      navigate('/iletisim');
+    } else if (path === 'home') {
+      navigate('/');
+    } else if (path === 'about') {
+      navigate('/neden-biz');
+    } else if (path === 'case-studies') {
+      navigate('/basari-hikayeleri');
+    } else if (path === 'blog') {
+      navigate('/blog');
+    } else {
+      navigate(path);
+    }
   };
+
   const handleSelectPost = (postId) => {
-    setCurrentPostId(postId);
-    setCurrentPage('blog-detail');
+    navigate(`/blog/${postId}`);
+  };
+
+  const Home = () => (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Hero onOpenModal={openModal} />
+      <Services onOpenModal={openModal} />
+      <TechStack />
+      <CaseStudy onNavigate={handleNavigate} />
+      <section id="analysis">
+        <LeadForm />
+      </section>
+    </motion.div>
+  );
+
+  const BlogDetailWrapper = () => {
+    const { postId } = useParams();
+    return <BlogPost postId={postId} onBack={() => navigate('/blog')} />;
   };
 
   return (
     <div className="min-h-screen bg-transparent">
       <Helmet>
-        {currentPage === 'home' ? (
-          <>
-            <title>MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı</title>
-            <meta name="description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
-          </>
-        ) : (
-          <>
-            <title>Vaka Analizleri | MED Growth Başarı Hikayeleri</title>
-            <meta name="description" content="Zarar eden işletmeleri kâra geçiren ve 8.2x ROAS değerlerine ulaşan gerçek dijital pazarlama başarı hikayelerimiz." />
-          </>
-        )}
+        <title>MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı</title>
+        <meta name="description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
       </Helmet>
+
       {/* Background elements stay consistent across pages */}
       <Suspense fallback={null}>
         <NeuralNetwork />
@@ -100,37 +136,15 @@ function App() {
       
       <main>
         <Suspense fallback={<div className="min-h-screen bg-brand-dark" />}>
-          <AnimatePresence mode="wait">
-            {currentPage === 'home' ? (
-              <motion.div
-                key="home"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Hero onOpenModal={openModal} />
-                <Services onOpenModal={openModal} />
-                <TechStack />
-                <CaseStudy onNavigate={handleNavigate} />
-                <section id="analysis">
-                  <LeadForm />
-                </section>
-              </motion.div>
-            ) : currentPage === 'case-studies' ? (
-              <CaseStudiesPage key="case-studies" onNavigate={handleNavigate} />
-            ) : currentPage === 'about' ? (
-              <AboutPage key="about" onNavigate={handleNavigate} />
-            ) : currentPage === 'blog' ? (
-              <BlogPage key="blog" onNavigate={handleNavigate} onSelectPost={handleSelectPost} />
-            ) : (
-              <BlogPost 
-                key="blog-detail" 
-                postId={currentPostId} 
-                onBack={() => setCurrentPage('blog')} 
-              />
-            )}
-          </AnimatePresence>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/sistem-mimarisi" element={<Home />} />
+            <Route path="/iletisim" element={<Home />} />
+            <Route path="/neden-biz" element={<AboutPage onNavigate={handleNavigate} />} />
+            <Route path="/basari-hikayeleri" element={<CaseStudiesPage onNavigate={handleNavigate} />} />
+            <Route path="/blog" element={<BlogPage onNavigate={handleNavigate} onSelectPost={handleSelectPost} />} />
+            <Route path="/blog/:postId" element={<BlogDetailWrapper />} />
+          </Routes>
         </Suspense>
       </main>
 
