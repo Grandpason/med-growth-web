@@ -110,11 +110,79 @@ function App() {
     return <BlogPost postId={postId} onBack={() => navigate('/blog')} />;
   };
 
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://med-growth-web.vercel.app/#organization",
+        "name": "MED Growth Partners",
+        "url": "https://med-growth-web.vercel.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://med-growth-web.vercel.app/favicon.svg",
+          "width": "512",
+          "height": "512"
+        },
+        "sameAs": [
+          "https://www.instagram.com/medgrowth.official/",
+          "https://www.linkedin.com/in/emin-dedeo%C4%9Flu-2a50b2183/"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+90-531-939-9701",
+          "contactType": "customer service",
+          "email": "medgrowthofficial@gmail.com",
+          "areaServed": "TR",
+          "availableLanguage": ["Turkish", "English"]
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "E-posta Pazarlama Otomasyonu",
+        "provider": { "@id": "https://med-growth-web.vercel.app/#organization" },
+        "description": "B2B odaklı soğuk e-posta ve gelişmiş n8n otomasyon çözümleriyle satış süreçlerinizi optimize edin.",
+        "serviceType": "Marketing Automation"
+      },
+      {
+        "@type": "Service",
+        "name": "GA4 & Veri Analitiği",
+        "provider": { "@id": "https://med-growth-web.vercel.app/#organization" },
+        "description": "Server-side tracking, ileri seviye ölçümleme ve veri görselleştirme ile büyümenizi veriyle kanıtlayın.",
+        "serviceType": "Data Analytics"
+      },
+      {
+        "@type": "Service",
+        "name": "SEO (Arama Motoru Optimizasyonu)",
+        "provider": { "@id": "https://med-growth-web.vercel.app/#organization" },
+        "description": "Teknik SEO, GEO (AI Search) görünürlüğü ve büyüme odaklı içerik stratejileri.",
+        "serviceType": "SEO Services"
+      },
+      {
+        "@type": "Service",
+        "name": "Google Ads & Meta Ads Yönetimi",
+        "provider": { "@id": "https://med-growth-web.vercel.app/#organization" },
+        "description": "Performans odaklı reklam yönetimi, ROAS optimizasyonu ve yüksek ROI sağlayan kreatif kurgular.",
+        "serviceType": "Paid Advertising"
+      },
+      {
+        "@type": "Service",
+        "name": "MVP Geliştirme Hizmeti",
+        "provider": { "@id": "https://med-growth-web.vercel.app/#organization" },
+        "description": "Girişimler için hızlı ürün geliştirme (Low-code/No-code) ve pazara giriş (Go-to-market) desteği.",
+        "serviceType": "Software Development"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-transparent">
       <Helmet>
         <title>MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı</title>
         <meta name="description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
       </Helmet>
 
       {/* Background elements stay consistent across pages */}
