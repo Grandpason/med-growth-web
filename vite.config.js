@@ -16,4 +16,15 @@ export default defineConfig({
       ] // İleride ekleyeceğiniz sayfaları buraya liste olarak ekleyebilirsiniz
     })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-utils': ['lenis', 'clsx', 'tailwind-merge', 'lucide-react']
+        }
+      }
+    }
+  }
 })
