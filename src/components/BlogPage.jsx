@@ -21,7 +21,7 @@ const blogPosts = [
     author: "MED Growth Team",
     readTime: "6 dk",
     category: "Vaka Analizi",
-    image: "https://images.unsplash.com/photo-1541888941257-2040d2a50110?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 'gorkem-tattoo-reklam',
