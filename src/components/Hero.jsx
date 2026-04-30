@@ -210,11 +210,9 @@ const Hero = ({ onOpenModal }) => {
         >
           <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-[0.2em] mb-10">Yönetilen Projeler ve Büyüme Ortaklıkları</p>
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-            <span className="text-xl font-bold text-white tracking-tighter">LA VILLA SPA</span>
-            <span className="text-xl font-bold text-white tracking-tighter">ELITE HOTELS</span>
-            <span className="text-xl font-bold text-white tracking-tighter">MODA DEVRİMİ</span>
-            <span className="text-xl font-bold text-white tracking-tighter">GLOBAL LOJİSTİK</span>
-            <span className="text-xl font-bold text-white tracking-tighter">SaaS FLOW</span>
+            <span className="text-xl font-bold text-white tracking-tighter">GORKEMTATTOO</span>
+            <span className="text-xl font-bold text-white tracking-tighter">LAVILLASPA</span>
+            <span className="text-xl font-bold text-white tracking-tighter">NESA İNŞAAT</span>
           </div>
         </motion.div>
       </div>
