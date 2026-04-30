@@ -1,13 +1,10 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
 import Lenis from 'lenis';
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
-import CaseStudy from './components/CaseStudy';
-import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 
 // Lazy loaded components
+const Navbar = lazy(() => import('./components/Navbar'));
 const NeuralNetwork = lazy(() => import('./components/NeuralNetwork'));
 const LeadForm = lazy(() => import('./components/LeadForm'));
 const Modal = lazy(() => import('./components/Modal'));
@@ -16,7 +13,10 @@ const AboutPage = lazy(() => import('./components/AboutPage'));
 const TechStack = lazy(() => import('./components/TechStack'));
 const BlogPage = lazy(() => import('./components/BlogPage'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
-import CookieConsent from './components/CookieConsent';
+const Services = lazy(() => import('./components/Services'));
+const CaseStudy = lazy(() => import('./components/CaseStudy'));
+const Footer = lazy(() => import('./components/Footer'));
+const CookieConsent = lazy(() => import('./components/CookieConsent'));
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
@@ -94,7 +94,9 @@ function App() {
 
       <CustomCursor />
       
-      <Navbar onOpenModal={openModal} onNavigate={handleNavigate} />
+      <Suspense fallback={null}>
+        <Navbar onOpenModal={openModal} onNavigate={handleNavigate} />
+      </Suspense>
       
       <main>
         <Suspense fallback={<div className="min-h-screen bg-brand-dark" />}>
@@ -132,7 +134,9 @@ function App() {
         </Suspense>
       </main>
 
-      <Footer onNavigate={handleNavigate} />
+      <Suspense fallback={null}>
+        <Footer onNavigate={handleNavigate} />
+      </Suspense>
 
       <Suspense fallback={null}>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
@@ -140,7 +144,9 @@ function App() {
         </Modal>
       </Suspense>
 
-      <CookieConsent />
+      <Suspense fallback={null}>
+        <CookieConsent />
+      </Suspense>
     </div>
   );
 }

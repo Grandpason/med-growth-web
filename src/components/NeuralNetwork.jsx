@@ -35,9 +35,6 @@ const NeuralNetwork = () => {
       mouse.y = e.clientY;
     };
 
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('mousemove', handleMouseMove);
-    handleResize();
 
     class Particle {
       constructor(index) {
@@ -96,6 +93,16 @@ const NeuralNetwork = () => {
 
     let lastScrollY = 0;
     let scrollVelocity = 0;
+    let totalPageHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    const handleResizeInternal = () => {
+      handleResize();
+      totalPageHeight = document.documentElement.scrollHeight - window.innerHeight;
+    };
+
+    window.addEventListener('resize', handleResizeInternal);
+    window.addEventListener('mousemove', handleMouseMove);
+    handleResizeInternal();
 
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
@@ -104,9 +111,7 @@ const NeuralNetwork = () => {
       scrollVelocity = currentScroll - lastScrollY;
       lastScrollY = currentScroll;
 
-      // Map scroll to 0-1 progress for growth
-      // Assuming page height is around 4000px
-      const totalPageHeight = document.documentElement.scrollHeight - window.innerHeight;
+      // Map scroll to 0-1 progress for growth using cached totalPageHeight
       const activeProgress = totalPageHeight > 0 ? currentScroll / totalPageHeight : 0;
       
       for (let i = 0; i < particles.length; i++) {
@@ -151,7 +156,7 @@ const NeuralNetwork = () => {
     animate();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResizeInternal);
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
