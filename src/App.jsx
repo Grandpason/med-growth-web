@@ -179,7 +179,23 @@ function App() {
     <div className="min-h-screen bg-transparent">
       <Helmet>
         <title>MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı</title>
-        <meta name="description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
+        <meta name="description" content="MED Growth Partners: B2B büyüme stratejileri, veri odaklı dijital pazarlama, SEO, reklam optimizasyonu ve MVP geliştirme çözümleriyle işletmenizi ölçeklendirin." />
+        <link rel="canonical" href="https://med-growth-web.vercel.app/" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://med-growth-web.vercel.app/" />
+        <meta property="og:title" content="MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı" />
+        <meta property="og:description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
+        <meta property="og:image" content="https://med-growth-web.vercel.app/icons.svg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://med-growth-web.vercel.app/" />
+        <meta property="twitter:title" content="MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı" />
+        <meta property="twitter:description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
+        <meta property="twitter:image" content="https://med-growth-web.vercel.app/icons.svg" />
+
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
         </script>
