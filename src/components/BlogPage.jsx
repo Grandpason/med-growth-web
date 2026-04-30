@@ -21,7 +21,7 @@ const blogPosts = [
     author: "MED Growth Team",
     readTime: "6 dk",
     category: "Vaka Analizi",
-    image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1541888941257-2040d2a50110?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 'gorkem-tattoo-reklam',
@@ -84,6 +84,10 @@ const BlogPage = ({ onNavigate, onSelectPost }) => {
                 <img 
                   src={post.image} 
                   alt={post.title}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800';
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-80"
                 />
                 <div className="absolute top-6 left-6">

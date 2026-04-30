@@ -130,8 +130,11 @@ const postData = {
       <section>
         <div className="aspect-[21/9] overflow-hidden rounded-[2.5rem] mb-12 border border-white/10 glass">
           <img 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" 
+            src="https://images.unsplash.com/photo-1541888941257-2040d2a50110?auto=format&fit=crop&q=80&w=1200" 
             alt="Modern Construction Architecture"
+            onError={(e) => {
+              e.target.src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200';
+            }}
             className="w-full h-full object-cover opacity-80"
           />
         </div>
