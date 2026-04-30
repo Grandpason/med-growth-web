@@ -24,6 +24,10 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
+            <a href="/#why-us" className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1">
+              Neden Biz?
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
             <a href="/#services" className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1">
               Sistem Mimarisi
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
@@ -33,6 +37,13 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               Case Study
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
+            </button>
+            <button 
+              onClick={() => onNavigate('blog')}
+              className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
+            >
+              Blog
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
             </button>
             <a href="/#contact" className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1">
@@ -62,6 +73,7 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
       {isOpen && (
         <div className="md:hidden glass absolute top-20 left-0 w-full border-t border-border-dark">
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
+            <a href="/#why-us" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors">Neden Biz?</a>
             <a href="/#services" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors">Sistem Mimarisi</a>
             <button 
               onClick={() => {
@@ -71,6 +83,15 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >
               Case Study
+            </button>
+            <button 
+              onClick={() => {
+                onNavigate('blog');
+                setIsOpen(false);
+              }}
+              className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
+            >
+              Blog
             </button>
             <a href="/#contact" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors">İletişim</a>
             <button onClick={onOpenModal} className="w-full mt-4">

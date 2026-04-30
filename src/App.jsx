@@ -12,12 +12,17 @@ const NeuralNetwork = lazy(() => import('./components/NeuralNetwork'));
 const LeadForm = lazy(() => import('./components/LeadForm'));
 const Modal = lazy(() => import('./components/Modal'));
 const CaseStudiesPage = lazy(() => import('./components/CaseStudiesPage'));
+const WhyUs = lazy(() => import('./components/WhyUs'));
+const TechStack = lazy(() => import('./components/TechStack'));
+const BlogPage = lazy(() => import('./components/BlogPage'));
+const BlogPost = lazy(() => import('./components/BlogPost'));
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
+  const [currentPostId, setCurrentPostId] = useState(null);
 
   useEffect(() => {
     // Scroll to top on page change
@@ -51,7 +56,14 @@ function App() {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  const handleNavigate = (page) => setCurrentPage(page);
+  const handleNavigate = (page) => {
+    setCurrentPage(page);
+    setCurrentPostId(null);
+  };
+  const handleSelectPost = (postId) => {
+    setCurrentPostId(postId);
+    setCurrentPage('blog-detail');
+  };
 
   return (
     <div className="min-h-screen bg-transparent">
@@ -95,14 +107,20 @@ function App() {
                 transition={{ duration: 0.5 }}
               >
                 <Hero onOpenModal={openModal} />
+                <WhyUs />
                 <Services onOpenModal={openModal} />
+                <TechStack />
                 <CaseStudy onNavigate={handleNavigate} />
                 <section id="analysis">
                   <LeadForm />
                 </section>
               </motion.div>
-            ) : (
+            ) : currentPage === 'case-studies' ? (
               <CaseStudiesPage key="case-studies" onNavigate={handleNavigate} />
+            ) : currentPage === 'blog' ? (
+              <BlogPage key="blog" onNavigate={handleNavigate} onSelectPost={handleSelectPost} />
+            ) : (
+              <BlogPost key="blog-detail" onBack={() => setCurrentPage('blog')} />
             )}
           </AnimatePresence>
         </Suspense>
