@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -18,6 +18,22 @@ const Footer = () => {
             <p className="text-gray-400 leading-relaxed mb-6">
               Bütünsel Dijital Çözümler ile KOBİ'lerin dijital dönüşümüne öncülük ediyor, veri güdümlü stratejilerle sürdürülebilir büyüme sağlıyoruz.
             </p>
+            <div className="flex space-x-4">
+              <a 
+                href="https://www.instagram.com/medgrowth.official/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-accent hover:text-white transition-all duration-300 border border-white/10"
+              >
+                <Instagram size={20} />
+              </a>
+              <a 
+                href="mailto:medgrowthofficial@gmail.com"
+                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-accent hover:text-white transition-all duration-300 border border-white/10"
+              >
+                <Mail size={20} />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -56,7 +72,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="text-brand-accent flex-shrink-0" />
-                <a href="mailto:grandpason_-_emin@outlook.com" className="text-gray-400 hover:text-white transition-colors cursor-hover-target">grandpason_-_emin@outlook.com</a>
+                <a href="mailto:medgrowthofficial@gmail.com" className="text-gray-400 hover:text-white transition-colors cursor-hover-target">medgrowthofficial@gmail.com</a>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Instagram size={20} className="text-brand-accent flex-shrink-0" />
+                <a href="https://www.instagram.com/medgrowth.official/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors cursor-hover-target">@medgrowth.official</a>
               </li>
             </ul>
           </div>
