@@ -13,6 +13,7 @@ const LeadForm = lazy(() => import('./components/LeadForm'));
 const Modal = lazy(() => import('./components/Modal'));
 const CaseStudiesPage = lazy(() => import('./components/CaseStudiesPage'));
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,6 +55,19 @@ function App() {
 
   return (
     <div className="min-h-screen bg-transparent">
+      <Helmet>
+        {currentPage === 'home' ? (
+          <>
+            <title>MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı</title>
+            <meta name="description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
+          </>
+        ) : (
+          <>
+            <title>Vaka Analizleri | MED Growth Başarı Hikayeleri</title>
+            <meta name="description" content="Zarar eden işletmeleri kâra geçiren ve 8.2x ROAS değerlerine ulaşan gerçek dijital pazarlama başarı hikayelerimiz." />
+          </>
+        )}
+      </Helmet>
       {/* Background elements stay consistent across pages */}
       <Suspense fallback={null}>
         <NeuralNetwork />

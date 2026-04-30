@@ -44,7 +44,7 @@ const Services = () => {
             Bütünsel Büyüme (Growth) Ekosistemi
           </h3>
           <p className="text-lg text-gray-400 font-light">
-            Metrikler ve yapay zeka algoritmalarıyla yönlendirilen, tamamen işletme kârlılığını (ROI/ROAS) artırmaya odaklı dijital hizmet altyapısı.
+            Metrikler ve yapay zeka algoritmalarıyla yönlendirilen, <strong>veri odaklı dijital pazarlama</strong> stratejileriyle işletme kârlılığını (ROI/ROAS) artırmaya odaklı büyüme altyapısı.
           </p>
         </div>
 
@@ -58,8 +58,8 @@ const Services = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group p-6 sm:p-8 rounded-3xl glass hover:bg-surface-dark transition-all duration-300"
             >
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 \${service.color} group-hover:scale-110 transition-transform duration-300`}>
-                {service.icon}
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${service.color} group-hover:scale-110 transition-transform duration-300`}>
+                {React.cloneElement(service.icon, { 'aria-hidden': 'true' })}
               </div>
               
               <h4 className="text-xl font-bold text-white mb-1">{service.title}</h4>

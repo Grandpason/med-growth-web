@@ -66,31 +66,25 @@ const Hero = ({ onOpenModal }) => {
               Veri Odaklı <span className="text-gradient">Growth</span> Stratejileriyle Ölçeklendirildi
             </motion.h1>
             
-            <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              Geleneksel reklamcılığın ötesinde; KOBİ'lerin dönüşüm oranları maksimize ediliyor, nitelikli trafik akışı sağlanıyor ve sürdürülebilir gelir artışı kurgulanıyor.
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+              Geleneksel reklamcılığın ötesinde; bir <strong>B2B büyüme ajansı</strong> olarak KOBİ'lerin dönüşüm oranlarını maksimize ediyor, <strong>veri odaklı dijital pazarlama</strong> ile sürdürülebilir gelir artışı kurguluyoruz.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
               <button onClick={onOpenModal} className="w-full sm:w-auto">
-                <MagneticButton className="w-full bg-brand-accent hover:bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg hover:shadow-brand-accent/20">
-                  <span className="mr-2">Büyüme Analizi Talep Et</span>
-                  <motion.span
-                    className="inline-block"
-                    variants={{
-                      initial: { x: 0 },
-                      hover: { x: 5 }
-                    }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300 ease-out" />
-                  </motion.span>
+                <MagneticButton className="w-full bg-brand-accent hover:bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] group">
+                  <span className="flex items-center justify-center">
+                    Analiz Talep Et
+                    <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </MagneticButton>
               </button>
               
-              <button onClick={onOpenModal} className="w-full sm:w-auto">
-                <MagneticButton className="w-full bg-surface-dark/50 hover:bg-surface-dark text-white border border-border-dark px-8 py-4 rounded-full font-semibold text-lg transition-colors backdrop-blur-md">
-                  <span className="mr-2">Hemen Başla</span>
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300 ease-out" />
+              <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="w-full sm:w-auto">
+                <MagneticButton className="w-full bg-transparent hover:bg-white/5 text-gray-300 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all border border-white/10 hover:border-white/30">
+                  <span className="flex items-center justify-center">
+                    Süreci İncele
+                  </span>
                 </MagneticButton>
               </button>
             </div>
@@ -114,7 +108,11 @@ const Hero = ({ onOpenModal }) => {
                     height="100%"
                     viewBox="0 0 100 100"
                     preserveAspectRatio="none"
+                    role="img"
+                    aria-labelledby="chartTitle chartDesc"
                   >
+                    <title id="chartTitle">MED Growth Kümülatif Büyüme Tablosu</title>
+                    <desc id="chartDesc">İşletmelerin MED Growth stratejileriyle yakaladığı kümülatif büyüme trendini gösteren grafik.</desc>
                     <defs>
                       <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#22c55e" stopOpacity="0" />
@@ -141,7 +139,7 @@ const Hero = ({ onOpenModal }) => {
                       animate={{ y: [0, -5, 0] }}
                       transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                     >
-                      <TrendingUp size={24} className="text-green-500" />
+                      <TrendingUp size={24} aria-hidden="true" className="text-green-500" />
                     </motion.div>
                     <div>
                       <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Kümülatif Büyüme</p>
@@ -156,7 +154,7 @@ const Hero = ({ onOpenModal }) => {
               <motion.div style={{ y: y2 }} className="absolute bottom-20 left-0 glass rounded-2xl p-6 w-72">
                 <div className="flex items-center space-x-4 mb-2">
                   <div className="w-12 h-12 bg-brand-accent/10 rounded-full flex items-center justify-center border border-brand-accent/20">
-                    <BarChart3 size={24} className="text-brand-accent" />
+                    <BarChart3 size={24} aria-hidden="true" className="text-brand-accent" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Dönüşüm Optimizasyonu</p>
@@ -201,6 +199,24 @@ const Hero = ({ onOpenModal }) => {
           </motion.div>
           
         </div>
+
+        {/* Managed Projects / Trust Bar */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-24 pt-12 border-t border-white/5"
+        >
+          <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-[0.2em] mb-10">Yönetilen Projeler ve Büyüme Ortaklıkları</p>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+            <span className="text-xl font-bold text-white tracking-tighter">LA VILLA SPA</span>
+            <span className="text-xl font-bold text-white tracking-tighter">ELITE HOTELS</span>
+            <span className="text-xl font-bold text-white tracking-tighter">MODA DEVRİMİ</span>
+            <span className="text-xl font-bold text-white tracking-tighter">GLOBAL LOJİSTİK</span>
+            <span className="text-xl font-bold text-white tracking-tighter">SaaS FLOW</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
