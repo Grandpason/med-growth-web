@@ -84,7 +84,7 @@ const postData = {
           </div>
           <h3 className="text-brand-accent font-bold uppercase tracking-widest text-xs mb-4">Pipeline Görsel Betimleme</h3>
           <p className="text-white text-lg font-medium italic">
-            [Burada: n8n düğümlerinden (nodes) oluşan, karmaşık ama düzenli bir veri akışı görseli yer alacak. Görselde; Webhook -> Filter -> GPT-4 (Personalization) -> Gmail/SendGrid akışı şematize edilmektedir.]
+            [Burada: n8n düğümlerinden (nodes) oluşan, karmaşık ama düzenli bir veri akışı görseli yer alacak. Görselde; Webhook → Filter → GPT-4 (Personalization) → Gmail/SendGrid akışı şematize edilmektedir.]
           </p>
         </section>
 
