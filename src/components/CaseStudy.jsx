@@ -27,8 +27,15 @@ const BentoCard = ({ className, children, title, subtitle, icon, delay = 0 }) =>
     <div className="relative z-10">
       <div className="flex justify-between items-start mb-6">
         <div>
-          {subtitle && <p className="text-brand-accent text-sm font-semibold tracking-wider uppercase mb-1">{subtitle}</p>}
-          {title && <h3 className="text-2xl font-bold text-gray-100">{title}</h3>}
+          {subtitle && <p className="text-brand-accent text-xs font-bold tracking-widest uppercase mb-2 opacity-80">{subtitle}</p>}
+          {title && (
+            <h3 className={cn(
+              "text-3xl font-extrabold text-white tracking-tight",
+              title === "AFTER" && "text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-brand-accent drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+            )}>
+              {title}
+            </h3>
+          )}
         </div>
         {icon && <div className="text-gray-400 group-hover:text-brand-accent transition-colors duration-300">{icon}</div>}
       </div>
@@ -82,8 +89,8 @@ const CaseStudy = ({ onNavigate }) => {
           {/* Main Stat (Span 2 cols, Span 2 rows) */}
           <BentoCard 
             className="md:col-span-2 md:row-span-2 glass-highlight" 
-            title="Dönüşüm Metrikleri" 
-            subtitle="The Impact"
+            title="AFTER" 
+            subtitle="(THE IMPACT)"
             icon={<ArrowUpRight size={28} />}
           >
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 h-full items-stretch lg:items-center mt-6">
@@ -125,8 +132,8 @@ const CaseStudy = ({ onNavigate }) => {
           {/* Problem Card */}
           <BentoCard 
             className="bg-surface-darker/80 border-red-500/10" 
-            title="Mevcut Durum" 
-            subtitle="Before"
+            title="BEFORE" 
+            subtitle=""
             icon={<TrendingDown size={24} className="text-red-500" />}
             delay={0.1}
           >
