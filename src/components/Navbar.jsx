@@ -24,14 +24,30 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/#why-us" className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1">
+            <button 
+              onClick={() => {
+                onNavigate('home');
+                setTimeout(() => {
+                  document.getElementById('why-us')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
+            >
               Neden Biz?
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="/#services" className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1">
+            </button>
+            <button 
+              onClick={() => {
+                onNavigate('home');
+                setTimeout(() => {
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
+            >
               Sistem Mimarisi
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </button>
             <button 
               onClick={() => onNavigate('case-studies')}
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
@@ -46,10 +62,18 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
               Blog
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <a href="/#contact" className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1">
+            <button 
+              onClick={() => {
+                onNavigate('home');
+                setTimeout(() => {
+                  document.getElementById('analysis')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
+            >
               İletişim
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </button>
             <button onClick={onOpenModal}>
               <MagneticButton className="bg-brand-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md">
                 Analiz Talep Et
@@ -73,8 +97,30 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
       {isOpen && (
         <div className="md:hidden glass absolute top-20 left-0 w-full border-t border-border-dark">
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
-            <a href="/#why-us" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors">Neden Biz?</a>
-            <a href="/#services" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors">Sistem Mimarisi</a>
+            <button 
+              onClick={() => {
+                onNavigate('home');
+                setIsOpen(false);
+                setTimeout(() => {
+                  document.getElementById('why-us')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
+            >
+              Neden Biz?
+            </button>
+            <button 
+              onClick={() => {
+                onNavigate('home');
+                setIsOpen(false);
+                setTimeout(() => {
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
+            >
+              Sistem Mimarisi
+            </button>
             <button 
               onClick={() => {
                 onNavigate('case-studies');
@@ -93,7 +139,18 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
             >
               Blog
             </button>
-            <a href="/#contact" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors">İletişim</a>
+            <button 
+              onClick={() => {
+                onNavigate('home');
+                setIsOpen(false);
+                setTimeout(() => {
+                  document.getElementById('analysis')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
+            >
+              İletişim
+            </button>
             <button onClick={onOpenModal} className="w-full mt-4">
               <div className="w-full bg-brand-accent hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow-md transition-colors text-center cursor-pointer">
                 Analiz Talep Et
