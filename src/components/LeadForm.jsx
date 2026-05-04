@@ -11,12 +11,16 @@ const LeadForm = ({ isModal = false }) => {
     company: '',
     email: '',
     phone: '',
-    goal: 'Reklam Optimizasyonu & ROAS Artışı'
+    goal: 'Reklam Optimizasyonu & ROAS Artışı',
+    marketingConsent: false
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({ 
+      ...prev, 
+      [name]: type === 'checkbox' ? checked : value 
+    }));
   };
 
   const sendToCRM = async (data) => {
@@ -31,8 +35,13 @@ const LeadForm = ({ isModal = false }) => {
     e.preventDefault();
     setLoading(true);
     
+    const submissionData = {
+      ...formData,
+      consentTimestamp: formData.marketingConsent ? new Date().toISOString() : null
+    };
+    
     try {
-      await sendToCRM(formData);
+      await sendToCRM(submissionData);
       setLoading(false);
       setSubmitted(true);
     } catch (error) {
@@ -181,6 +190,25 @@ const LeadForm = ({ isModal = false }) => {
                 <option>Yeni Ürün / MVP Lansmanı</option>
                 <option>CRM & Sadık Müşteri Kitlesi Oluşturma</option>
               </select>
+            </div>
+            
+            <div className="flex items-start space-x-3 py-2">
+              <div className="flex items-center h-5">
+                <input
+                  id="marketingConsent"
+                  name="marketingConsent"
+                  type="checkbox"
+                  checked={formData.marketingConsent}
+                  onChange={handleInputChange}
+                  className="w-4 h-4 rounded border-border-dark bg-surface-dark text-brand-accent focus:ring-brand-accent transition-colors cursor-pointer"
+                />
+              </div>
+              <div className="text-xs leading-relaxed text-gray-400">
+                <label htmlFor="marketingConsent" className="cursor-pointer select-none">
+                  Kampanyalar, haberler ve duyurular hakkında SMS ve e-posta yoluyla bilgilendirilmeyi onaylıyorum. 
+                  {" "}<a href="#" className="text-brand-accent hover:underline">Kişisel Verilerin Korunması Aydınlatma Metni</a>'ni okudum.
+                </label>
+              </div>
             </div>
 
             <MagneticButton 
