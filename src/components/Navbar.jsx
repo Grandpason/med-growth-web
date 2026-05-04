@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import MagneticButton from './MagneticButton';
 
-const Navbar = ({ onOpenModal, onNavigate }) => {
+const Navbar = ({ onOpenModal }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -10,52 +11,52 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <button 
-            onClick={() => onNavigate('home')}
+          <Link 
+            to="/"
             className="flex-shrink-0 flex items-center cursor-pointer"
           >
             <span className="font-bold text-2xl tracking-tight text-white">
               MED<span className="text-brand-accent"> Growth</span>
             </span>
-          </button>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => onNavigate('about')}
+            <Link 
+              to="/neden-biz"
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               Neden Biz?
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button 
-              onClick={() => onNavigate('services')}
+            </Link>
+            <Link 
+              to="/sistem-mimarisi"
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               Sistem Mimarisi
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button 
-              onClick={() => onNavigate('case-studies')}
+            </Link>
+            <Link 
+              to="/basari-hikayeleri"
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               Case Study
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button 
-              onClick={() => onNavigate('blog')}
+            </Link>
+            <Link 
+              to="/blog"
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               Blog
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button 
-              onClick={() => onNavigate('contact')}
+            </Link>
+            <Link 
+              to="/iletisim"
               className="relative text-gray-300 hover:text-white font-medium transition-colors cursor-hover-target group py-1"
             >
               İletişim
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
-            </button>
+            </Link>
             <button onClick={onOpenModal}>
               <MagneticButton className="bg-brand-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md">
                 Analiz Talep Et
@@ -80,51 +81,41 @@ const Navbar = ({ onOpenModal, onNavigate }) => {
       {isOpen && (
         <div className="md:hidden glass absolute top-20 left-0 w-full border-t border-border-dark">
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
-            <button 
-              onClick={() => {
-                onNavigate('about');
-                setIsOpen(false);
-              }}
+            <Link 
+              to="/neden-biz"
+              onClick={() => setIsOpen(false)}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >
               Neden Biz?
-            </button>
-            <button 
-              onClick={() => {
-                onNavigate('services');
-                setIsOpen(false);
-              }}
+            </Link>
+            <Link 
+              to="/sistem-mimarisi"
+              onClick={() => setIsOpen(false)}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >
               Sistem Mimarisi
-            </button>
-            <button 
-              onClick={() => {
-                onNavigate('case-studies');
-                setIsOpen(false);
-              }}
+            </Link>
+            <Link 
+              to="/basari-hikayeleri"
+              onClick={() => setIsOpen(false)}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >
               Case Study
-            </button>
-            <button 
-              onClick={() => {
-                onNavigate('blog');
-                setIsOpen(false);
-              }}
+            </Link>
+            <Link 
+              to="/blog"
+              onClick={() => setIsOpen(false)}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >
               Blog
-            </button>
-            <button 
-              onClick={() => {
-                onNavigate('contact');
-                setIsOpen(false);
-              }}
+            </Link>
+            <Link 
+              to="/iletisim"
+              onClick={() => setIsOpen(false)}
               className="block px-3 py-3 text-gray-300 font-medium hover:bg-surface-darker hover:text-white w-full text-center rounded-md transition-colors"
             >
               İletişim
-            </button>
+            </Link>
             <button onClick={onOpenModal} className="w-full mt-4">
               <div className="w-full bg-brand-accent hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow-md transition-colors text-center cursor-pointer">
                 Analiz Talep Et

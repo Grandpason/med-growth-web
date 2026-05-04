@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, TrendingUp, Target, Zap, CheckCircle2, BarChart3, Database, Mail, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const postData = {
   'la-villa-spa-ciro': {
@@ -185,13 +187,19 @@ const BlogPost = ({ postId, onBack }) => {
       className="min-h-screen pt-32 pb-20"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <button 
-          onClick={onBack}
+        <Helmet>
+          <title>{post.title} | MED Growth Partners Blog</title>
+          <meta name="description" content={`${post.title} — ${post.result}. MED Growth Partners vaka analizi ve teknik inceleme.`} />
+          <link rel="canonical" href={`https://med-growth-web.vercel.app/blog/${postId}`} />
+        </Helmet>
+
+        <Link 
+          to="/blog"
           className="flex items-center text-gray-400 hover:text-white transition-colors mb-8 group"
         >
           <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-2 transition-transform" />
           Blog'a Dön
-        </button>
+        </Link>
 
         <header className="mb-12">
           <div className="flex items-center space-x-4 mb-6">

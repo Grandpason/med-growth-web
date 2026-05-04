@@ -48,8 +48,8 @@ const TechStack = () => {
     <section id="tech-stack" className="py-24 relative bg-surface-darker/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-brand-accent font-semibold tracking-widest uppercase text-sm mb-3">Teknoloji Ekosistemimiz</h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">En Modern Araçlarla Ölçeklendiriyoruz</h3>
+          <span className="text-brand-accent font-semibold tracking-widest uppercase text-sm mb-3 block">Teknoloji Ekosistemimiz</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">En Modern Araçlarla Ölçeklendiriyoruz</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
             Büyüme stratejilerimizi, sektör standartlarını belirleyen teknik araç seti ve yapay zeka entegrasyonlarıyla destekliyoruz.
           </p>
@@ -67,7 +67,7 @@ const TechStack = () => {
             >
               <div className={`mb-6 flex items-center space-x-3 ${iconColorMap[cat.color]}`}>
                 {cat.icon}
-                <h4 className="text-lg font-bold text-white">{cat.title}</h4>
+                <h3 className="text-lg font-bold text-white">{cat.title}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {cat.tools.map((tool, tIndex) => (

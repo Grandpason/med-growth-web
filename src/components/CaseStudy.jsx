@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import CountUp from 'react-countup';
 import { ArrowUpRight, TrendingDown, Target, Zap, Briefcase, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import MagneticButton from './MagneticButton';
@@ -56,7 +57,7 @@ const HoverLogo = ({ label, glowColor }) => (
   </div>
 );
 
-const CaseStudy = ({ onNavigate }) => {
+const CaseStudy = () => {
   const { scrollYProgress } = useScroll();
   const yOffset = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
@@ -207,12 +208,12 @@ const CaseStudy = ({ onNavigate }) => {
           viewport={{ once: true }}
           className="mt-16 flex justify-center"
         >
-          <button onClick={() => onNavigate('case-studies')}>
+          <Link to="/basari-hikayeleri">
             <MagneticButton className="bg-surface-dark/50 hover:bg-surface-dark text-white border border-border-dark px-10 py-5 rounded-full font-bold text-lg transition-all backdrop-blur-md flex items-center group">
               <span>Tüm Başarı Hikayelerini İncele</span>
               <ArrowRight size={22} className="ml-3 group-hover:translate-x-2 transition-transform duration-300" />
             </MagneticButton>
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

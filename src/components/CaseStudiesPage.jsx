@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, Target, Zap, Rocket, BarChart3 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import MagneticButton from './MagneticButton';
 
 const projects = [
@@ -39,18 +41,24 @@ const CaseStudiesPage = ({ onNavigate }) => {
       transition={{ duration: 0.6 }}
       className="min-h-screen pt-32 pb-20"
     >
+      <Helmet>
+        <title>Başarı Hikayeleri | MED Growth Partners</title>
+        <meta name="description" content="MED Growth Partners'ın veri odaklı stratejilerle ölçeklendirdiği başarı hikayelerini ve vaka analizlerini inceleyin." />
+        <link rel="canonical" href="https://med-growth-web.vercel.app/basari-hikayeleri" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">
-            <button 
-              onClick={() => onNavigate('home')}
+            <Link 
+              to="/"
               className="flex items-center text-gray-400 hover:text-white transition-colors mb-8 group"
             >
               <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-2 transition-transform" />
               Ana Sayfaya Dön
-            </button>
+            </Link>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
               Başarıyı <span className="text-gradient">Ölçeklendiriyoruz</span>: Tüm Projelerimiz
             </h1>
@@ -77,7 +85,7 @@ const CaseStudiesPage = ({ onNavigate }) => {
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <p className="text-brand-accent text-xs font-bold tracking-widest uppercase mb-1">{project.category}</p>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">{project.title}</h3>
+                    <h2 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">{project.title}</h2>
                   </div>
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-brand-accent transition-colors">
                     <ArrowUpRight size={20} className="text-white" />
@@ -105,11 +113,11 @@ const CaseStudiesPage = ({ onNavigate }) => {
         <div className="mt-24 text-center glass rounded-[3rem] p-12 md:p-20 border-white/5">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Sıradaki Başarı Hikayesi Sizinki Olsun</h2>
           <p className="text-gray-400 mb-10 max-w-xl mx-auto">Veri odaklı büyüme stratejilerimizle işletmenizi yeni zirvelere taşıyalım.</p>
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <Link to="/iletisim">
             <MagneticButton className="bg-brand-accent hover:bg-blue-600 text-white px-12 py-5 rounded-full font-bold text-lg shadow-lg">
               Ücretsiz Analiz Başlat
             </MagneticButton>
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>

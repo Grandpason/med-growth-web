@@ -21,10 +21,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom';
 
+const SITE_URL = 'https://med-growth-web.vercel.app';
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const canonicalUrl = `${SITE_URL}${location.pathname === '/' ? '' : location.pathname}`;
 
   useEffect(() => {
     // Scroll to top or specific section on route change
@@ -98,7 +101,7 @@ function App() {
       <Hero onOpenModal={openModal} />
       <Services onOpenModal={openModal} />
       <TechStack />
-      <CaseStudy onNavigate={handleNavigate} />
+      <CaseStudy />
       <section id="analysis">
         <LeadForm />
       </section>
@@ -107,7 +110,7 @@ function App() {
 
   const BlogDetailWrapper = () => {
     const { postId } = useParams();
-    return <BlogPost postId={postId} onBack={() => navigate('/blog')} />;
+    return <BlogPost postId={postId} />;
   };
 
   const schemaMarkup = {
@@ -180,21 +183,21 @@ function App() {
       <Helmet>
         <title>MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı</title>
         <meta name="description" content="MED Growth Partners: B2B büyüme stratejileri, veri odaklı dijital pazarlama, SEO, reklam optimizasyonu ve MVP geliştirme çözümleriyle işletmenizi ölçeklendirin." />
-        <link rel="canonical" href="https://med-growth-web.vercel.app/" />
+        <link rel="canonical" href={canonicalUrl} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://med-growth-web.vercel.app/" />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content="MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı" />
         <meta property="og:description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
-        <meta property="og:image" content="https://med-growth-web.vercel.app/icons.svg" />
+        <meta property="og:image" content={`${SITE_URL}/icons.svg`} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://med-growth-web.vercel.app/" />
+        <meta property="twitter:url" content={canonicalUrl} />
         <meta property="twitter:title" content="MED Growth Partners | Veri Odaklı B2B Büyüme Ajansı" />
         <meta property="twitter:description" content="Veri odaklı dijital pazarlama ve B2B büyüme stratejileriyle KOBİ'lerin cirosunu ve dönüşüm oranlarını maksimize eden bütüncül growth ajansı." />
-        <meta property="twitter:image" content="https://med-growth-web.vercel.app/icons.svg" />
+        <meta property="twitter:image" content={`${SITE_URL}/icons.svg`} />
 
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
@@ -215,7 +218,7 @@ function App() {
       <CustomCursor />
       
       <Suspense fallback={null}>
-        <Navbar onOpenModal={openModal} onNavigate={handleNavigate} />
+        <Navbar onOpenModal={openModal} />
       </Suspense>
       
       <main>
@@ -224,16 +227,16 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/sistem-mimarisi" element={<Home />} />
             <Route path="/iletisim" element={<Home />} />
-            <Route path="/neden-biz" element={<AboutPage onNavigate={handleNavigate} />} />
-            <Route path="/basari-hikayeleri" element={<CaseStudiesPage onNavigate={handleNavigate} />} />
-            <Route path="/blog" element={<BlogPage onNavigate={handleNavigate} onSelectPost={handleSelectPost} />} />
+            <Route path="/neden-biz" element={<AboutPage />} />
+            <Route path="/basari-hikayeleri" element={<CaseStudiesPage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:postId" element={<BlogDetailWrapper />} />
           </Routes>
         </Suspense>
       </main>
 
       <Suspense fallback={null}>
-        <Footer onNavigate={handleNavigate} />
+        <Footer />
       </Suspense>
 
       <Suspense fallback={null}>

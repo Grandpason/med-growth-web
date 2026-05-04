@@ -39,10 +39,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-brand-accent font-semibold tracking-wide uppercase text-sm mb-3">Sistem Mimarisi</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <span className="text-brand-accent font-semibold tracking-wide uppercase text-sm mb-3 block">Sistem Mimarisi</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Bütünsel Büyüme (Growth) Ekosistemi
-          </h3>
+          </h2>
           <p className="text-lg text-gray-400 font-light">
             Metrikler ve yapay zeka algoritmalarıyla yönlendirilen, <strong>veri odaklı dijital pazarlama</strong> stratejileriyle işletme kârlılığını (ROI/ROAS) artırmaya odaklı büyüme altyapısı.
           </p>
@@ -62,7 +62,7 @@ const Services = () => {
                 {React.cloneElement(service.icon, { 'aria-hidden': 'true' })}
               </div>
               
-              <h4 className="text-xl font-bold text-white mb-1">{service.title}</h4>
+              <h3 className="text-xl font-bold text-white mb-1">{service.title}</h3>
               <p className="text-sm font-semibold text-brand-accent mb-4 uppercase tracking-wider">{service.subtitle}</p>
               
               <p className="text-gray-400 leading-relaxed font-light">
