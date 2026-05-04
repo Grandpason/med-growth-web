@@ -37,13 +37,18 @@
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </noscript>
+    <style>
+      /* SEO Fallback içeriğini kullanıcıdan gizle, botlar görmeye devam eder */
+      .seo-fallback { display: none; }
+    </style>
   </head>
   <body>
     <div id="root">
-      <!--
-        SEO Fallback: Bu içerik JavaScript yüklenmeden önce botlara görünür.
-        React hydrate edildikten sonra bu içerik React DOM ile değiştirilir.
-      -->
+      <div class="seo-fallback">
+        <!--
+          SEO Fallback: Bu içerik JavaScript yüklenmeden önce botlara görünür.
+          React hydrate edildikten sonra bu içerik React DOM ile değiştirilir.
+        -->
       <header>
         <nav>
           <a href="/">MED Growth Partners</a>
@@ -86,6 +91,7 @@
         <a href="https://www.linkedin.com/in/emin-dedeo%C4%9Flu-2a50b2183/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <p>&copy; 2026 MED Growth Partners. Tüm hakları saklıdır.</p>
       </footer>
+      </div>
     </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
