@@ -18,6 +18,7 @@ const CaseStudy = lazy(() => import('./components/CaseStudy'));
 const Footer = lazy(() => import('./components/Footer'));
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
 const WhatsAppWidget = lazy(() => import('./components/WhatsAppWidget'));
+const KVKKPage = lazy(() => import('./components/KVKKPage'));
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom';
@@ -232,6 +233,7 @@ function App() {
             <Route path="/basari-hikayeleri" element={<CaseStudiesPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:postId" element={<BlogDetailWrapper />} />
+            <Route path="/kvkk" element={<KVKKPage />} />
           </Routes>
         </Suspense>
       </main>

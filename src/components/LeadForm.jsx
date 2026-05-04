@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2, Calendar, User, Building2, Mail, Phone, BarChart, Loader2 } from 'lucide-react';
 import MagneticButton from './MagneticButton';
@@ -206,7 +207,7 @@ const LeadForm = ({ isModal = false }) => {
               <div className="text-xs leading-relaxed text-gray-400">
                 <label htmlFor="marketingConsent" className="cursor-pointer select-none">
                   Kampanyalar, haberler ve duyurular hakkında SMS ve e-posta yoluyla bilgilendirilmeyi onaylıyorum. 
-                  {" "}<a href="#" className="text-brand-accent hover:underline">Kişisel Verilerin Korunması Aydınlatma Metni</a>'ni okudum.
+                  {" "}<Link to="/kvkk" className="text-brand-accent hover:underline">Kişisel Verilerin Korunması Aydınlatma Metni</Link>'ni okudum.
                 </label>
               </div>
             </div>
