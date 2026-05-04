@@ -13,7 +13,7 @@ const postData = {
     content: (
       <>
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">Giriş: Mevcut Durum Analizi</h2>
+          <h3 className="text-2xl font-bold text-white mb-4">Giriş: Mevcut Durum Analizi</h3>
           <p className="text-gray-400 font-light leading-relaxed text-lg">
             İşletme bize ulaştığında, aylık 250.000 ₺ ciro ile başabaş noktasının altında kalıyordu. Ana sorunlar; reklam bütçesinin yanlış hedeflenmesi ve düşük dönüşüm oranlarıydı.
           </p>
@@ -47,7 +47,7 @@ const postData = {
     content: (
       <>
         <section>
-          <h2 className="text-2xl font-bold text-white mb-6">Giriş: B2B'de Neden Geleneksel Mail Yetersiz?</h2>
+          <h3 className="text-2xl font-bold text-white mb-6">Giriş: B2B'de Neden Geleneksel Mail Yetersiz?</h3>
           <p className="text-gray-400 font-light leading-relaxed text-lg mb-6">
             Geleneksel e-posta pazarlama yöntemleri, B2B dünyasının karmaşık satın alma döngüleri ve kişiselleştirme ihtiyaçları karşısında artık yetersiz kalıyor. Toplu gönderilen, hedeflenmemiş e-postalar doğrudan "Spam" klasörüne düşerken, manuel takip süreçleri ekiplerin zamanını eritiyor. 
           </p>
@@ -57,7 +57,7 @@ const postData = {
         </section>
 
         <section className="my-16">
-          <h2 className="text-2xl font-bold text-white mb-6">Teknik Pipeline: Akıllı İş Akışının Anatomisi</h2>
+          <h3 className="text-2xl font-bold text-white mb-6">Teknik Pipeline: Akıllı İş Akışının Anatomisi</h3>
           <p className="text-gray-400 font-light leading-relaxed text-lg mb-8">
             Modern bir e-posta pipeline'ı, statik bir listeden ibaret değildir. n8n ile kurduğumuz mimari şu 4 temel aşamadan oluşur:
           </p>
@@ -84,14 +84,14 @@ const postData = {
           <div className="absolute top-0 right-0 p-8 opacity-5">
             <Database size={120} />
           </div>
-          <h3 className="text-brand-accent font-bold uppercase tracking-widest text-xs mb-4">Pipeline Görsel Betimleme</h3>
+          <h4 className="text-brand-accent font-bold uppercase tracking-widest text-xs mb-4">Pipeline Görsel Betimleme</h4>
           <p className="text-white text-lg font-medium italic">
             [Burada: n8n düğümlerinden (nodes) oluşan, karmaşık ama düzenli bir veri akışı görseli yer alacak. Görselde; Webhook → Filter → GPT-4 (Personalization) → Gmail/SendGrid akışı şematize edilmektedir.]
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-6">Neden n8n Otomasyonu?</h2>
+          <h3 className="text-2xl font-bold text-white mb-6">Neden n8n Otomasyonu?</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 glass rounded-3xl border-white/5">
               <TrendingUp className="text-emerald-400 mb-4" />
@@ -112,7 +112,7 @@ const postData = {
         </section>
 
         <section className="text-center pt-16 mt-16 border-t border-white/5">
-          <h2 className="text-3xl font-bold text-white mb-6">Operasyonlarınızı Otomatize Etmeye Hazır mısınız?</h2>
+          <h3 className="text-3xl font-bold text-white mb-6">Operasyonlarınızı Otomatize Etmeye Hazır mısınız?</h3>
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto font-light text-lg">
             Manuel süreçler markanızın büyüme hızını kesiyor. n8n tabanlı e-posta pipeline'ı ile satış ekibinizin sadece 'sıcak' fırsatlara odaklanmasını sağlayın.
           </p>
@@ -143,7 +143,7 @@ const postData = {
             className="w-full h-full object-cover opacity-80"
           />
         </div>
-        <h2 className="text-2xl font-bold text-white mb-4">Dijitalde Temel Atmak</h2>
+        <h3 className="text-2xl font-bold text-white mb-4">Dijitalde Temel Atmak</h3>
         <p className="text-gray-400 font-light leading-relaxed text-lg">
           İnşaat sektörü gibi geleneksel bir alanda, lokal SEO ve Google Haritalar optimizasyonu ile NESA İnşaat'ın yeni projelerine gelen talepleri otomatize ettik.
         </p>
@@ -167,7 +167,7 @@ const postData = {
             className="w-full h-full object-cover opacity-80"
           />
         </div>
-        <h2 className="text-2xl font-bold text-white mb-4">Sanatı Veriyle Birleştirmek</h2>
+        <h3 className="text-2xl font-bold text-white mb-4">Sanatı Veriyle Birleştirmek</h3>
         <p className="text-gray-400 font-light leading-relaxed text-lg">
           Kreatif içerikleri, doğru hedef kitle kurgusuyla birleştirerek dövme stüdyosu için sürdürülebilir bir randevu akışı oluşturduk.
         </p>

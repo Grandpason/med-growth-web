@@ -116,9 +116,9 @@ const BlogPage = () => {
                     <span className="flex items-center"><Clock size={14} className="mr-1.5 text-brand-accent" /> {post.readTime}</span>
                   </div>
                   
-                  <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors duration-300">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors duration-300">
                     {post.title}
-                  </h2>
+                  </h3>
                   <p className="text-gray-400 font-light leading-relaxed mb-6">
                     {post.excerpt}
                   </p>

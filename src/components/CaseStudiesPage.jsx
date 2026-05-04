@@ -85,7 +85,7 @@ const CaseStudiesPage = ({ onNavigate }) => {
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <p className="text-brand-accent text-xs font-bold tracking-widest uppercase mb-1">{project.category}</p>
-                    <h2 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">{project.title}</h2>
+                    <h3 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">{project.title}</h3>
                   </div>
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-brand-accent transition-colors">
                     <ArrowUpRight size={20} className="text-white" />
