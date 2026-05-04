@@ -17,6 +17,7 @@ const Services = lazy(() => import('./components/Services'));
 const CaseStudy = lazy(() => import('./components/CaseStudy'));
 const Footer = lazy(() => import('./components/Footer'));
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
+const WhatsAppWidget = lazy(() => import('./components/WhatsAppWidget'));
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom';
@@ -247,6 +248,10 @@ function App() {
 
       <Suspense fallback={null}>
         <CookieConsent />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <WhatsAppWidget />
       </Suspense>
     </div>
   );
