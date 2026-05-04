@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/((?!assets/|.*\\.).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
@@ -18,10 +18,6 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "ALLOW-FROM https://vercel.com"
         },
         {
           "key": "Referrer-Policy",
