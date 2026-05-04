@@ -133,7 +133,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} MED Growth Partners. Tüm hakları saklıdır.
           </p>
           <div className="flex space-x-6 text-sm text-gray-400">
-            <Link to="/" className="hover:text-white transition-colors">Gizlilik Politikası</Link>
+            <Link to="/" className="hover:text-white transition-colors">KVKK ve Gizlilik Politikası</Link>
             <Link to="/" className="hover:text-white transition-colors">Kullanım Şartları</Link>
           </div>
         </div>
