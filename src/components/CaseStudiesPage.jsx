@@ -12,7 +12,8 @@ const projects = [
     metric: "%140 Gelir Artışı",
     description: "Zarar eden bir işletmeyi 30 günde kâra geçiren ve ciro rekoru kıran bütüncül büyüme stratejisi.",
     color: "from-blue-500/20 to-purple-500/20",
-    size: "md:col-span-2 md:row-span-2"
+    size: "md:col-span-2 md:row-span-2",
+    link: "/basari-hikayeleri/la-villa-spa"
   },
   {
     title: "NESA İnşaat",
@@ -70,43 +71,54 @@ const CaseStudiesPage = ({ onNavigate }) => {
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className={`glass rounded-3xl p-8 relative overflow-hidden group cursor-pointer ${project.size}`}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-              
-              <div className="relative z-10 h-full flex flex-col">
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <p className="text-brand-accent text-xs font-bold tracking-widest uppercase mb-1">{project.category}</p>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">{project.title}</h3>
-                  </div>
-                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-brand-accent transition-colors">
-                    <ArrowUpRight size={20} className="text-white" />
-                  </div>
-                </div>
+          {projects.map((project, index) => {
+            const CardContent = (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`glass rounded-3xl p-8 relative overflow-hidden group cursor-pointer ${project.size} h-full block`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                 
-                <div className="mt-auto">
-                  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 mb-6 inline-block">
-                    <p className="text-2xl font-bold text-white tracking-tight">{project.metric}</p>
+                <div className="relative z-10 h-full flex flex-col">
+                  <div className="flex justify-between items-start mb-6">
+                    <div>
+                      <p className="text-brand-accent text-xs font-bold tracking-widest uppercase mb-1">{project.category}</p>
+                      <h3 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">{project.title}</h3>
+                    </div>
+                    <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-brand-accent transition-colors">
+                      <ArrowUpRight size={20} className="text-white" />
+                    </div>
                   </div>
-                  <p className="text-gray-400 font-light text-sm leading-relaxed mb-6">
-                    {project.description}
-                  </p>
                   
-                  <div className="flex items-center text-white font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 transition-transform">
-                    Detayları İncele <Zap size={14} className="ml-2 text-brand-accent" />
+                  <div className="mt-auto">
+                    <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 mb-6 inline-block">
+                      <p className="text-2xl font-bold text-white tracking-tight">{project.metric}</p>
+                    </div>
+                    <p className="text-gray-400 font-light text-sm leading-relaxed mb-6">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex items-center text-white font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 transition-transform">
+                      Detayları İncele <Zap size={14} className="ml-2 text-brand-accent" />
+                    </div>
                   </div>
                 </div>
+              </motion.div>
+            );
+
+            return project.link ? (
+              <Link to={project.link} key={index} className={project.size}>
+                {CardContent}
+              </Link>
+            ) : (
+              <div key={index} className={project.size}>
+                {CardContent}
               </div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}

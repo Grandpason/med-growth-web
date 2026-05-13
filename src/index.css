@@ -86,6 +86,8 @@
   z-index: -1;
   background-color: #050505;
   overflow: hidden;
+  contain: strict;
+  transform: translateZ(0);
 }
 
 .mesh-blob-1 {

@@ -17,15 +17,25 @@ export default defineConfig({
     })
   ],
   build: {
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
               return 'vendor-react';
             }
             if (id.includes('framer-motion')) {
               return 'vendor-motion';
+            }
+            if (id.includes('lenis') || id.includes('studio-freight')) {
+              return 'vendor-scroll';
+            }
+            if (id.includes('react-router') || id.includes('@remix-run')) {
+              return 'vendor-router';
+            }
+            if (id.includes('react-helmet')) {
+              return 'vendor-helmet';
             }
             return 'vendor-utils';
           }

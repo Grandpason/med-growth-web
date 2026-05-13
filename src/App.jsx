@@ -1,7 +1,6 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
 import Lenis from 'lenis';
 import Hero from './components/Hero';
-import CustomCursor from './components/CustomCursor';
 
 // Lazy loaded components
 const Navbar = lazy(() => import('./components/Navbar'));
@@ -15,11 +14,13 @@ const BlogPage = lazy(() => import('./components/BlogPage'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
 const Services = lazy(() => import('./components/Services'));
 const CaseStudy = lazy(() => import('./components/CaseStudy'));
+const LaVillaCaseStudy = lazy(() => import('./components/LaVillaCaseStudy'));
 const Footer = lazy(() => import('./components/Footer'));
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
 const WhatsAppWidget = lazy(() => import('./components/WhatsAppWidget'));
 const KVKKPage = lazy(() => import('./components/KVKKPage'));
-import { motion, AnimatePresence } from 'framer-motion';
+const CustomCursor = lazy(() => import('./components/CustomCursor'));
+import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom';
 
@@ -55,14 +56,16 @@ function App() {
       infinite: false,
     });
 
+    let rafId;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
@@ -217,7 +220,9 @@ function App() {
         <div className="mesh-blob-4"></div>
       </div>
 
-      <CustomCursor />
+      <Suspense fallback={null}>
+        <CustomCursor />
+      </Suspense>
       
       <Suspense fallback={null}>
         <Navbar onOpenModal={openModal} />
@@ -231,6 +236,7 @@ function App() {
             <Route path="/iletisim" element={<Home />} />
             <Route path="/neden-biz" element={<AboutPage />} />
             <Route path="/basari-hikayeleri" element={<CaseStudiesPage />} />
+            <Route path="/basari-hikayeleri/la-villa-spa" element={<LaVillaCaseStudy />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:postId" element={<BlogDetailWrapper />} />
             <Route path="/kvkk" element={<KVKKPage />} />

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import React, { useEffect, useRef, memo } from 'react';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
 
 const NeuralNetwork = () => {
   const canvasRef = useRef(null);
@@ -21,7 +21,7 @@ const NeuralNetwork = () => {
     let height = window.innerHeight;
     
     const particles = [];
-    const particleCount = 60;
+    const particleCount = 40;
     const connectionDistance = 150;
     const mouse = { x: null, y: null, radius: 100 };
 
@@ -95,13 +95,27 @@ const NeuralNetwork = () => {
     let scrollVelocity = 0;
     let totalPageHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-    const handleResizeInternal = () => {
-      handleResize();
+    // Cache totalPageHeight outside animation loop to avoid forced reflow
+    const recalcPageHeight = () => {
       totalPageHeight = document.documentElement.scrollHeight - window.innerHeight;
     };
 
+    const handleResizeInternal = () => {
+      handleResize();
+      recalcPageHeight();
+    };
+
+    // Use ResizeObserver to detect layout changes without polling
+    let resizeObserver;
+    if (typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(() => {
+        recalcPageHeight();
+      });
+      resizeObserver.observe(document.documentElement);
+    }
+
     window.addEventListener('resize', handleResizeInternal);
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     handleResizeInternal();
 
     const animate = () => {
@@ -159,6 +173,7 @@ const NeuralNetwork = () => {
       window.removeEventListener('resize', handleResizeInternal);
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
+      if (resizeObserver) resizeObserver.disconnect();
     };
   }, []);
 
@@ -171,4 +186,4 @@ const NeuralNetwork = () => {
   );
 };
 
-export default NeuralNetwork;
+export default memo(NeuralNetwork);

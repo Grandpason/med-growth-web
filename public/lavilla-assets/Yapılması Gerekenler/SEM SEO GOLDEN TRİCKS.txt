@@ -1,0 +1,15 @@
+Medikal Masaj Sayfasına yönlendir. Ve o sayfanın H1 etiketi mutlaka "Medikal Masaj" içermeli. Google botları H1 ile reklam metnini eşleştirir.
+
+
+Çözüm (SKAG Mantığı): Reklam gruplarını çok spesifik böl.
+
+
+Grup 1: "Medikal Masaj" -> Reklam Başlığı: "Şişli Uzman Medikal Masaj"
+
+Grup 2: "Thai Masajı" -> Reklam Başlığı: "Orijinal Thai Masajı Deneyimi"
+
+Aksiyon: Anahtar kelime, reklam başlığında birebir geçsin.
+
+Hız ve Mobil: Wix siten mobilde yavaş açılıyorsa puanın düşer. Wix'in "Site Speed" panelinden gereksiz animasyonları kapat.
+
+İçerik: Sayfada sadece resim olmasın. En az 300 kelimelik, o masaj türünü anlatan özgün metin olsun.
